@@ -2,6 +2,28 @@
 
 A fast, dependency-free static website. Just HTML, CSS and a little JavaScript — no build step, no frameworks, no monthly fees.
 
+## Selection criteria
+
+This is the flagship, job-hunting portfolio — ruthlessly selective, not a
+photo dump. A photo earns a place here on:
+
+- **Photographic merit** — a decisive, unrepeatable moment (action, genuine
+  expression, real tension) beats a merely pleasant or technically clean shot.
+- **Composition & light** — deliberate framing, use of shadow/color/graphic
+  structure; not just "in focus and well-exposed."
+- **Range** — the gallery as a whole should show versatility (action,
+  landscape, documentary/street, mood/atmosphere), not fifteen variations
+  on one genre.
+- **Order matters** — the strongest, most striking work leads the page for
+  immediate impact; gentler/more common shots (however pleasant) sit
+  further down.
+
+People appear here freely (strangers, candid subjects), but never family, and
+no photos of personal friends posed for the camera.
+
+**Working on this repo as an agent? Read [AGENTS.md](AGENTS.md) first.** It is
+the full brief and overrides anything out of date in this README.
+
 ## Files
 
 ```
