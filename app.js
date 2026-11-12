@@ -2,13 +2,19 @@
 document.getElementById("year").textContent = new Date().getFullYear();
 
 // ===== Masonry + Lightbox =====
-// Figures are kept in one master array, in source-order (= priority order,
-// best photos first). That order drives both the masonry column layout
-// and the lightbox's next/prev sequence, so "next" always means "next by
-// priority," never "next by whichever column it landed in."
+// Figures are kept in one master array, shuffled on every page load. That
+// order drives both the masonry column layout and the lightbox's next/prev
+// sequence, so "next" always means the next photo in reading order, never
+// "next by whichever column it landed in."
 (function () {
   const container = document.getElementById("masonry");
   const figures = Array.from(container.querySelectorAll(".print"));
+
+  // Shuffle once per page load (Fisher–Yates), so every visit shows a fresh order.
+  for (let i = figures.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [figures[i], figures[j]] = [figures[j], figures[i]];
+  }
 
   function columnCountFor(width) {
     if (width <= 560) return 1;
@@ -18,7 +24,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
 
   // Round-robin the figures across N columns (col0 gets 0,N,2N,...; col1
   // gets 1,N+1,...), which is what actually makes the visual reading order
-  // (left to right, then down) match the source order regardless of each
+  // (left to right, then down) match the master order regardless of each
   // photo's height. Plain CSS column-count fills one column completely
   // before starting the next, which does not.
   function layoutMasonry() {
